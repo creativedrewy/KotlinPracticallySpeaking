@@ -1,0 +1,183 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/solarized.css" />
+
+    <style>
+        .reveal h1,
+        .reveal h2,
+        .reveal h3,
+        .reveal h4,
+        .reveal h5,
+        .reveal h6 {
+            margin: 0 0 20px 0;
+            font-family: "Source Sans Pro", Helvetica, sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: normal;
+            text-transform: none;
+            text-shadow: none;
+            word-wrap: break-word; 
+        }
+
+        .gist-meta {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h2>Kotlin, Practically Speaking</h2>
+            </section>
+            <section>
+                <h3>Who am I?</h3>
+                <h4>Andrew Watson</h4>
+                <h4>Senior Android developer @ Yammer</h4>
+                <h4>🐣: @creativedrewy</h4>
+            </section>
+            <section>
+                <h3>Who are you?</h3>
+            </section>
+            <section>
+                <h3>What I'm going to talk about</h3>
+                <h4>1.5 years of Kotlin is great!</h4>
+                <ul>
+                    <li>The road we took to get here</li>
+                    <li>Practical lessons we've learned along the way</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Getting the party started at Yammer</h3>
+            </section>
+            <section>
+                <h3>May, 2017</h3>
+                <ul>
+                    <li>I had been using "not-official" Kotlin since 2015</li>
+                    <li>I/O 2017: Google FTW!</li>
+                    <li>The team was understandably mixed</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Taking our time</h3>
+                <ul>
+                    <li>Didn't make anyone do Kotlin right away</li>
+                    <li>Book club for 6 months</li>
+                    <li>"Kotlin in Action" by Jemerov and Isakova</li>
+                    <li>I think some of us were rocking out already :)</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Our next steps</h3>
+                <ul>
+                    <li>Wrote a draft of Kotlin coding standards</li>
+                    <li>Converting unit/Espresso tests was good practice</li>
+                    <li>Eventually: All new code to be written in Kotlin</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Things we've learned</h3>
+                <iframe src="https://giphy.com/embed/IPbS5R4fSUl5S" width="480" height="266" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/IPbS5R4fSUl5S"></a></p>
+            </section>
+            <section>
+                <h3>Lesson:</h3>
+                <h3>The auto-converter leaves work for you to do 🤷‍</h3>
+                <h6>An example:</h6>
+            </section>
+            <section>
+                <script src="https://gist.github.com/creativedrewy/679bb311b19142af271531ebfcb838dd.js?file=JavaActivity.java"></script>
+            </section>
+            <section>
+                <h3>The initial conversion</h3>
+            </section>
+            <section>
+                <script src="https://gist.github.com/creativedrewy/679bb311b19142af271531ebfcb838dd.js?file=KotlinActivityDefault.kt"></script>
+            </section>
+            <section>
+                <h3>We can do better</h3>
+            </section>
+            <section>
+                <script src="https://gist.github.com/creativedrewy/679bb311b19142af271531ebfcb838dd.js?file=KotlinActivityBetter.kt"></script>
+            </section>
+            <section>
+                <h3>A word about Companion Objects</h3>
+                <script src="https://gist.github.com/creativedrewy/679bb311b19142af271531ebfcb838dd.js?file=CompanionSlide1.java"></script>
+            </section>
+            <section>
+                <h6>Converted:</h6>
+                <script src="https://gist.github.com/creativedrewy/679bb311b19142af271531ebfcb838dd.js?file=CompanionSlide2a.kt"></script>
+                <h6>Consumed in Java:</h6>
+                <script src="https://gist.github.com/creativedrewy/679bb311b19142af271531ebfcb838dd.js?file=CompanionSlide2b.java"></script>
+            </section>
+            <section>
+                <h6>The right way:</h6>
+                <script src="https://gist.github.com/creativedrewy/679bb311b19142af271531ebfcb838dd.js?file=CompanionSlide3a.kt"></script>
+                <h6>New consumption:</h6>
+                <script src="https://gist.github.com/creativedrewy/679bb311b19142af271531ebfcb838dd.js?file=CompanionSlide3b.java"></script>
+            </section>
+            <section>
+                <h3>Lesson:</h3>
+                <h3>Kotlin conversion will wipe all Git history 🙀</h3>
+            </section>
+            <section>
+                <h3>A beautiful history...</h3>
+                <img src="images/git1.png" />
+            </section>
+            <section>
+                <h3>Gone in an instant!</h3>
+                <img src="images/git2.png" />
+            </section>
+            <section>
+                <h3>So how do we actually do this?</h3>
+                <ol>
+                    <li>Do an initial auto Kotlin conversion</li>
+                    <li>Clean up all the auto convert issues</li>
+                    <li>Copy the converted contents to a scratch file</li>
+                    <li>Revert your changes</li>
+                    <li>Rename **just** the file name to *.kt</li>
+                    <li>Commit! Your build is mega broken.</li>
+                    <li>Paste in your converted Kotlin code</li>
+                    <li>Commit a 2nd time! Now you are converted.</li>
+                </ol>
+            </section>
+            <section>
+                <h3>Plz don't squash!</h3>
+                <img src="images/git3.png" />
+            </section>
+            <section>
+                <h3>Lesson:</h3>
+                <h3>Death to Utils! Death to Helpers!</h3>
+            </section>
+            <section>
+                <h3>Long live Extensions!</h3>
+                <h4>Organize by class type</h4>
+                <img src="images/extensions.png" />
+            </section>
+            <section>
+                <h3>Lesson:</h3>
+                <h4>Evolve your coding standards</h4>
+                <ul>
+                    <li>Usage of "it"</li>
+                    <li>Declaring type when we really didn't need to</li>
+                </ul>
+            </section>
+            <section>
+                <h3>You really can start thinking different! Better!</h3>
+                <script src="https://gist.github.com/creativedrewy/679bb311b19142af271531ebfcb838dd.js?file=ChainExample.kt"></script>
+            </section>
+            <section>
+                <h3>Thanks!</h3>
+            </section>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.js"></script>
+
+    <script>
+        Reveal.initialize();
+    </script>
+</body>
+
+</html>
