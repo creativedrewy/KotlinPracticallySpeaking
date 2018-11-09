@@ -48,6 +48,7 @@
                 <ul>
                     <li>The road we took to get here</li>
                     <li>Practical lessons we've learned along the way</li>
+                    <li>Particularly re: migrating and converting an existing codebase</li>
                 </ul>
             </section>
             <section>
@@ -58,7 +59,7 @@
                 <ul>
                     <li>I had been using "not-official" Kotlin since 2015</li>
                     <li>I/O 2017: Google FTW!</li>
-                    <li>The team was understandably mixed</li>
+                    <li>Our team was understandably mixed</li>
                 </ul>
             </section>
             <section>
@@ -67,7 +68,7 @@
                     <li>Didn't make anyone do Kotlin right away</li>
                     <li>Book club for 6 months</li>
                     <li>"Kotlin in Action" by Jemerov and Isakova</li>
-                    <li>I think some of us were rocking out already :)</li>
+                    <li>We didn't outright block the usage of it though</li>
                 </ul>
             </section>
             <section>
@@ -75,7 +76,7 @@
                 <ul>
                     <li>Wrote a draft of Kotlin coding standards</li>
                     <li>Converting unit/Espresso tests was good practice</li>
-                    <li>Eventually: All new code to be written in Kotlin</li>
+                    <li>Eventually: all new code to be written in Kotlin</li>
                 </ul>
             </section>
             <section>
@@ -140,12 +141,40 @@
                     <li>Rename **just** the file name to *.kt</li>
                     <li>Commit! Your build is mega broken.</li>
                     <li>Paste in your converted Kotlin code</li>
-                    <li>Commit a 2nd time! Now you are converted.</li>
+                    <li>Commit a 2nd time. Now you are converted!</li>
                 </ol>
             </section>
             <section>
                 <h3>Plz don't squash!</h3>
                 <img src="images/git3.png" />
+            </section>
+            <section>
+                <h3>Lesson:</h3>
+                <h3>No really, don't use !!</h3>
+                <ul>
+                    <li>Don't follow the auto-converter's example</li>
+                    <li>With rare exeception, if you're using !!, you're doing it wrong</li>
+                    <li>Short-circuits Kotlin's nullability features</li>
+                    <li>Our PR rule: If there's a !!, explain yourself!</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Lesson:</h3>
+                <h3>Your Kotlin files can share a 🏡 with your Java files</h3>
+                <ul>
+                    <li>Initially we created two src dirs - java/ and kotlin/</li>
+                    <li>Made conversion painful - had to recreate directory structures</li>
+                    <li>After a while, we were totally comfortable with .java and .kt side-by-side</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Lesson:</h3>
+                <h3>Some files just can't be converted</h3>
+                <ul>
+                    <li>The older the file, the more likely you can't convert</li>
+                    <li>Base classes (protected fields, getters/setters, etc)</li>
+                    <li>Assumptions about nullability and/or using null as data "state"</li>
+                </ul>
             </section>
             <section>
                 <h3>Lesson:</h3>
@@ -170,13 +199,6 @@
             </section>
             <section>
                 <h3>Thanks!</h3>
-            </section>
-
-            <section style="display: none;">
-                ### Notes:
-
-                - A slide about "!!""
-                - Some wow-factor Kotlin slides
             </section>
         </div>
     </div>
