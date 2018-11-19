@@ -25,6 +25,16 @@
         .gist-meta {
             display: none !important;
         }
+
+        .code-title {
+            font-family: monospace !important;
+            background: #dddddd;
+            color: #7b5ab8;
+        }
+
+        .strike {
+            text-decoration: line-through;
+        }
     </style>
 </head>
 
@@ -32,7 +42,7 @@
     <div class="reveal">
         <div class="slides">
             <section>
-                <h2>Kotlin, Practically Speaking</h2>
+                <h2><pre> Kotlin, Practically Speaking</pre></h2>
             </section>
             <section>
                 <h3>Who am I?</h3>
@@ -142,6 +152,10 @@
                 <img src="images/git2.png" />
             </section>
             <section>
+                <h3>This is actually due to the way Git works</h3>
+                <h4>Not the auto-converter's fault</h4>
+            </section>
+            <section>
                 <h3>So how do we actually do this?</h3>
                 <ol>
                     <li>Do an initial auto Kotlin conversion</li>
@@ -157,6 +171,16 @@
             <section>
                 <h3>Plz don't squash!</h3>
                 <img src="images/git3.png" />
+            </section>
+            <section>
+                <h3>Lesson:</h3>
+                <h3>Your custom lint rules don't apply here</h3>
+                <h4>(But probably need reviewing anyway)</h4>
+            </section>
+            <section>
+                <h3>Goodbye <span class="code-title">JavaScanner</span>, hello <span class="code-title strike">UastScanner</span></h3>
+                <h4>Just kidding: <span class="code-title">Detector(), SourceCodeScanner</span></h4>
+                <h4>Dev Summit Talk: <a href="https://youtu.be/ffH-LD5uP4s" target="_blank">https://youtu.be/ffH-LD5uP4s</a></h4>
             </section>
             <section>
                 <h3>Lesson:</h3>
