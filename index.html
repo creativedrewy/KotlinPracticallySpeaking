@@ -52,7 +52,7 @@
                 <h3>Who am I?</h3>
                 <h4>Andrew Watson</h4>
                 <h4>Senior Android developer @ Microsoft - Yammer team</h4>
-                <h4>🐣: @creativedrewy</h4>
+                <h4>🐣: <a href="https://twitter.com/creativedrewy" target="_blank">@creativedrewy</a></h4>
             </section>
             <section>
                 <h3>Who are you?</h3>
@@ -101,6 +101,17 @@
                     <li>I can tell you intuitively things are better</li>
                     <li>Official metrics would be very nice</li>
                     <li>Maybe this talk could help you get buy-in!</li>
+                </ul>
+                <p>&nbsp;</p>
+                <h5>But I will say one thing...</h5>
+            </section>
+            <section>
+                <h3>It's not Swift</h3>
+                <ul>
+                    <li>No 100mb runtime</li>
+                    <li>No impact on app build time (right?)</li>
+                    <li>Complete interop with existing code</li>
+                    <li>Impact is more like a library than a new tech stack</li>
                 </ul>
             </section>
             <section>
@@ -172,13 +183,13 @@
                 <h3>So how do we actually do this?</h3>
                 <ol>
                     <li>Do an initial auto Kotlin conversion</li>
-                    <li>Clean up all the auto convert issues</li>
+                    <li>Clean up all the auto convert issues, ensure app builds</li>
                     <li>Copy the converted contents to a scratch file</li>
                     <li>Revert your changes</li>
                     <li>Rename **just** the file name to *.kt</li>
                     <li>Commit! Your build is mega broken.</li>
-                    <li>Paste in your converted Kotlin code</li>
-                    <li>Commit a 2nd time. Now you are converted!</li>
+                    <li>Immediately paste in your converted Kotlin code</li>
+                    <li>Commit a 2nd time. Now you are converted! Ensure build.</li>
                 </ol>
             </section>
             <section>
@@ -192,8 +203,16 @@
             </section>
             <section>
                 <h3>Goodbye <span class="code-title">JavaScanner</span>, hello <span class="code-title strike">UastScanner</span></h3>
-                <h4>Just kidding: <span class="code-title">SourceCodeScanner</span></h4>
+                <h4>Just kidding, <span class="code-title">SourceCodeScanner</span></h4>
                 <h4>Dev Summit Talk: <a href="https://youtu.be/ffH-LD5uP4s" target="_blank">https://youtu.be/ffH-LD5uP4s</a></h4>
+            </section>
+            <section>
+                <h3>What does all this mean?</h3>
+            </section>
+            <section>
+                <h3>Kotlin conversion != eliminating tech debt</h3>
+                <h4>You need to be sober about it</h4>
+                <h4>It can introduce MORE tech debt</h4>
             </section>
             <section>
                 <h3>Lesson:</h3>
@@ -250,7 +269,7 @@
             </section>
             <section>
                 <h3>Thanks!</h3>
-                <h4>🐣: @creativedrewy</h4>
+                <h4>🐣: <a href="https://twitter.com/creativedrewy" target="_blank">@creativedrewy</a></h4>
                 <h5>These slides:</h5>
                 <a class="final-link" href="https://creativedrewy.github.io/KotlinPracticallySpeaking/">https://creativedrewy.github.io/KotlinPracticallySpeaking/</a>
             </section>
